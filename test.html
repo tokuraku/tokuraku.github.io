@@ -20,9 +20,14 @@
           
         });
         document.querySelector('button#btn2').addEventListener('click',function(){
-          var decrypted = CryptoJS.AES.decrypt(text.value, "1234567890123456").toString(CryptoJS.enc.Utf8);
-          //text.value = encrypted.toString();
-          alert(decrypted)
+          //var decrypted = CryptoJS.AES.decrypt(text.value, "1234567890123456").toString(CryptoJS.enc.Utf8);
+          var key = CryptoJS.enc.Utf8.parse('0123456789abcede');
+          var iv = CryptoJS.enc.Utf8.parse('1234567812345678');
+          var encryptedHexStr = CryptoJS.enc.Hex.parse(text.value);
+          var srcs = CryptoJS.enc.Base64.stringify(encryptedHexStr);
+          var decrypt = CryptoJS.AES.decrypt(srcs, key, { iv: iv, mode: CryptoJS.mode.CBC, padding: CryptoJS.pad.Pkcs7 });
+          var decryptedStr = decrypt.toString(CryptoJS.enc.Utf8);
+          alert(decryptedStr.toString())
         });
       }
     </script>
