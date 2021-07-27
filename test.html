@@ -3,12 +3,20 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.0.0/crypto-js.min.js"></script>
   </head>
   <body>
-    <button id="btn">Button</button>
+    <button id="btn1">Encrypt</button>
+    <input type="text" id="text">
+    <button id="btn2">Decrypt</button>
     <script>
       window.onload = function(){
-        document.querySelector('button#btn').addEventListener('click',function(){
+        var text = document.querySelector('input#text');
+        document.querySelector('button#btn1').addEventListener('click',function(){
           var encrypted = CryptoJS.AES.encrypt("TestBird", "test");
-          console.log(encrypted.toString());
+          text.value = encrypted.toString();
+        });
+        document.querySelector('button#btn2').addEventListener('click',function(){
+          var decrypted = CryptoJS.AES.decrypt(text.value, "test").toString(CryptoJS.enc.Utf8);
+          //text.value = encrypted.toString();
+          alert(decrypted)
         });
       }
     </script>
