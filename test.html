@@ -10,11 +10,11 @@
       window.onload = function(){
         var text = document.querySelector('input#text');
         document.querySelector('button#btn1').addEventListener('click',function(){
-          var encrypted = CryptoJS.AES.encrypt("TestBird", "test");
+          var encrypted = CryptoJS.AES.encrypt("TestBird", "1234567890123456");
           text.value = encrypted.toString();
         });
         document.querySelector('button#btn2').addEventListener('click',function(){
-          var decrypted = CryptoJS.AES.decrypt(text.value, "test").toString(CryptoJS.enc.Utf8);
+          var decrypted = CryptoJS.AES.decrypt(text.value, "1234567890123456").toString(CryptoJS.enc.Utf8);
           //text.value = encrypted.toString();
           alert(decrypted)
         });
