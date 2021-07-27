@@ -14,7 +14,7 @@
           //text.value = encrypted.toString();
           var key = CryptoJS.enc.Utf8.parse('0123456789abcede');
           var iv = CryptoJS.enc.Utf8.parse('1234567812345678');
-          var srcs = CryptoJS.enc.Utf8.parse("ASBS");
+          var srcs = CryptoJS.enc.Utf8.parse("TestBird");
           var encrypted = CryptoJS.AES.encrypt(srcs, key, { iv: iv, mode: CryptoJS.mode.CBC, padding: CryptoJS.pad.Pkcs7 });
           text.value = encrypted.ciphertext.toString()
           
