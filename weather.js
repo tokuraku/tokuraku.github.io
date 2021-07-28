@@ -1,3 +1,6 @@
+function parseKey(key) {
+	return CryptoJS.enc.Utf8.parse(key);
+}
 window.onload = function(){
 	if (location.hash == '#weather') {
 		var url = '/weather.html'
