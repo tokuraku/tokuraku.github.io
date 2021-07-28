@@ -11,11 +11,10 @@ window.onload = function(){
 				const key = '123456';
 				const md5 = CryptoJS.MD5(key).toString();
 				const iv = md5.substr(0, 16);
-				const data = xhr.responseText;
 				const uKey = parseKey(md5);
 				const uIv = parseKey(iv);
 				
-				let bytes = CryptoJS.AES.decrypt(text.value, uKey,
+				let bytes = CryptoJS.AES.decrypt(xhr.responseText, uKey,
 				{
 					iv: uIv,
 					mode: CryptoJS.mode.CBC,
