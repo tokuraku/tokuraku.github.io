@@ -23,7 +23,10 @@ window.onload = function(){
 			if (xhr.readyState === 4 && xhr.status === 200) {
 				const key = '123456';
 				var decrypted = decrypt(CryptoJS.mode.CBC, xhr.responseText, key);
-				document.querySelector('div#weather').innerHTML = decrypted;
+				var resHTML = document.createElement('div');
+				resHTML.innerHTML = decrypted;
+				document.querySelector('div#weather').appendChild(resHTML);
+				//document.querySelector('div#weather').innerHTML = decrypted;
 			}
 		}
 		xhr.send();
