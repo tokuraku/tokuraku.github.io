@@ -27,7 +27,8 @@
           var srcs = CryptoJS.enc.Base64.stringify(encryptedHexStr);
           var decrypt = CryptoJS.AES.decrypt(srcs, key, { iv: iv, mode: CryptoJS.mode.CBC, padding: CryptoJS.pad.Pkcs7 });
           var decryptedStr = decrypt.toString(CryptoJS.enc.Utf8).toString();*/
-          var bytes = CryptoJS.AES.decrypt("text.value", key);
+          var key = 'test';
+          var bytes = CryptoJS.AES.decrypt(text.value, key);
           var decryptedStr = bytes.toString(CryptoJS.enc.Utf8);
           alert(decryptedStr)
         });
