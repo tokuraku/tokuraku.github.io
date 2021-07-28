@@ -11,8 +11,7 @@ function decrypt(mode, cipherText, key) {
 		iv: uIv,
 		mode: mode,
 		padding: CryptoJS.pad.Pkcs7
-	}
-	);
+	});
 	return bytes.toString(CryptoJS.enc.Utf8);
 }
 window.onload = function(){
@@ -24,7 +23,6 @@ window.onload = function(){
 			if (xhr.readyState === 4 && xhr.status === 200) {
 				const key = '123456';
 				var decrypted = decrypt(CryptoJS.mode.CBC, xhr.responseText, key);
-				
 				document.querySelector('div#weather').innerHTML = decrypted;
 			}
 		}
