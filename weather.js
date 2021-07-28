@@ -1,6 +1,6 @@
 window.onload = function(){
 	if (location.hash == '#weather') {
-		var url = '/weather.'
+		var url = '/weather.html'
 		var xhr = new XMLHttpRequest();
 		xhr.open('GET', url, true);
 		xhr.onreadystatechange = function () {
@@ -19,8 +19,7 @@ window.onload = function(){
 					padding: CryptoJS.pad.Pkcs7
 				});
 				
-				var resHTML = document.createElement('html');
-				resHTML.innerHTML = bytes.toString(CryptoJS.enc.Utf8);
+				document.querySelector('div#weather').innerHTML = bytes.toString(CryptoJS.enc.Utf8);
 			}
 		}
 		xhr.send();
