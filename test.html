@@ -37,7 +37,7 @@
           const uKey = parseKey(md5Key);
           const uIv = parseKey(iv);
 
-          let bytes = CryptoJS.AES.decrypt(cipherText, uKey,
+          let bytes = CryptoJS.AES.decrypt(text.value, uKey,
               {
                   iv: uIv,
                   mode: CryptoJS.mode.CBC,
