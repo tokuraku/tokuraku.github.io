@@ -7,6 +7,9 @@
     <input type="text" id="text">
     <button id="btn2">Decrypt</button>
     <script>
+      function parseKey(key) {
+        return CryptoJS.enc.Utf8.parse(key);
+      }
       window.onload = function(){
         var text = document.querySelector('input#text');
         document.querySelector('button#btn1').addEventListener('click',function(){
