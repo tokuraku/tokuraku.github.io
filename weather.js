@@ -16,7 +16,7 @@ function decrypt(mode, cipherText, key) {
 }
 window.onload = function(){
 	if (location.hash == '#weather') {
-		var url = '/weather.html'
+		var url = '/weather'
 		var xhr = new XMLHttpRequest();
 		xhr.open('GET', url, true);
 		xhr.onreadystatechange = function () {
