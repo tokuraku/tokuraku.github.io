@@ -27,10 +27,20 @@
           var srcs = CryptoJS.enc.Base64.stringify(encryptedHexStr);
           var decrypt = CryptoJS.AES.decrypt(srcs, key, { iv: iv, mode: CryptoJS.mode.CBC, padding: CryptoJS.pad.Pkcs7 });
           var decryptedStr = decrypt.toString(CryptoJS.enc.Utf8).toString();*/
-          var key = 'test';
-          var bytes = CryptoJS.AES.decrypt(key,text.value);
-          var decryptedStr = bytes.toString(CryptoJS.enc.Utf8);
-          alert(decryptedStr)
+          const key = '123456';
+          const md5Key = CryptoJS.MD5(key).toString();
+          const iv = md5Key.substr(0, 16);
+          const data = text.value
+          const uKey = parseKey(md5Key);
+          const uIv = parseKey(iv);
+
+          let bytes = CryptoJS.AES.decrypt(cipherText, uKey,
+              {
+                  iv: uIv,
+                  mode: CryptoJS.mode.CBC,
+                  padding: CryptoJS.pad.Pkcs7
+              });
+           alert(bytes.toString(CryptoJS.enc.Utf8));
         });
       }
     </script>
