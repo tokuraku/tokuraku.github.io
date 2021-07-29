@@ -5,5 +5,5 @@
   
 }*/
 function testAlert() {
-  alert('Hey!')
+  //alert('Hey!')
 }
