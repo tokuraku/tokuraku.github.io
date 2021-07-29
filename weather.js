@@ -35,19 +35,20 @@ window.onload = function(){
 }
 
 function rader() {
+	var img = document.querySelector('img#rainrader')
 	var pres = document.querySelectorAll('pres');
 	img.addEventListener('click', function (e) {
-		var img = document.querySelector('img#rainrader')
-		var index = parseInt(img.getAttribute('index'));
-		if (e.offsetX > img.width / 2) {
+		var target = e.target;
+		var index = parseInt(target.getAttribute('index'));
+		if (e.offsetX > target.width / 2) {
 			if (index + 1 < imgs.length) {
-				img.src = imgs[index + 1];
-				img.setAttribute('index', index + 1);
+				target.src = imgs[index + 1];
+				target.setAttribute('index', index + 1);
 			}
 		} else {
 			if (index - 1 >= 0) {
-				img.src = imgs[index - 1];
-				img.setAttribute('index', index - 1);
+				target.src = imgs[index - 1];
+				target.setAttribute('index', index - 1);
 			}
 		}
 	},false);
