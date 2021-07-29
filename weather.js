@@ -43,7 +43,6 @@ function rader() {
 		if (e.offsetX > target.width / 2) {
 			if (index + 1 < pres.length) {
 				target.src = pres[index + 1].getAttribute('src');
-				//target.src = imgs[index + 1];
 				target.setAttribute('index', index + 1);
 			}
 		} else {
