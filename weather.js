@@ -27,9 +27,28 @@ window.onload = function(){
 				resHTML.innerHTML = decrypted;
 				document.querySelector('div#weather').appendChild(resHTML);
 				//document.querySelector('div#weather').innerHTML = decrypted;
-				testAlert();
+				rader();
 			}
 		}
 		xhr.send();
 	}
+}
+
+function rader() {
+	var img = document.querySelector('img#rainrader')
+	var pres = document.querySelectorAll('pres');
+	img.addEventListener('click', function (e) {
+		var index = parseInt(img.getAttribute('index'));
+		if (e.offsetX > img.width / 2) {
+			if (index + 1 < imgs.length) {
+				img.src = imgs[index + 1];
+				img.setAttribute('index', index + 1);
+			}
+		} else {
+			if (index - 1 >= 0) {
+				img.src = imgs[index - 1];
+				img.setAttribute('index', index - 1);
+			}
+		}
+	},false);
 }
