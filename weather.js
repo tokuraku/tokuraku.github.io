@@ -36,18 +36,19 @@ window.onload = function(){
 
 function rader() {
 	var img = document.querySelector('img#rainrader')
-	var pres = document.querySelectorAll('pres');
 	img.addEventListener('click', function (e) {
 		var target = e.target;
+		var pres = document.querySelectorAll('pres');
 		var index = parseInt(target.getAttribute('index'));
 		if (e.offsetX > target.width / 2) {
-			if (index + 1 < imgs.length) {
-				target.src = imgs[index + 1];
+			if (index + 1 < pres.length) {
+				target.src = pres[index + 1].getAttribute('src');
+				//target.src = imgs[index + 1];
 				target.setAttribute('index', index + 1);
 			}
 		} else {
 			if (index - 1 >= 0) {
-				target.src = imgs[index - 1];
+				target.src = pres[index - 1].getAttribute('src');
 				target.setAttribute('index', index - 1);
 			}
 		}
