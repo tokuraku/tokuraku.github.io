@@ -27,6 +27,7 @@ window.onload = function(){
 				resHTML.innerHTML = decrypted;
 				document.querySelector('div#weather').appendChild(resHTML);
 				//document.querySelector('div#weather').innerHTML = decrypted;
+				testAlert();
 			}
 		}
 		xhr.send();
