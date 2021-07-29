@@ -35,9 +35,9 @@ window.onload = function(){
 }
 
 function rader() {
-	var img = document.querySelector('img#rainrader')
 	var pres = document.querySelectorAll('pres');
 	img.addEventListener('click', function (e) {
+		var img = document.querySelector('img#rainrader')
 		var index = parseInt(img.getAttribute('index'));
 		if (e.offsetX > img.width / 2) {
 			if (index + 1 < imgs.length) {
