@@ -9,8 +9,8 @@ window.onload = function(){
 				var decrypted = decrypt(CryptoJS.mode.CBC, xhr.responseText, key);
 				var resHTML = document.createElement('div');
 				resHTML.innerHTML = decrypted;
-				//document.querySelector('div#weather').appendChild(resHTML);
-				document.querySelector('div#weather').innerHTML = decrypted;
+				document.querySelector('div#weather').appendChild(resHTML);
+				//document.querySelector('div#weather').innerHTML = decrypted;
 				rader();
 			}
 		}
