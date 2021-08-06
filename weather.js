@@ -10,7 +10,7 @@ window.onload = function(){
 				var resHTML = document.createElement('div');
 				resHTML.innerHTML = decrypted;
 				//document.querySelector('div#weather').appendChild(resHTML);
-				document.querySelector('div#weather').innerHTML(resHTML);
+				document.querySelector('div#weather').innerHTML = resHTML;
 				//document.querySelector('div#weather').innerHTML = decrypted;
 				rader();
 			}
