@@ -14,3 +14,10 @@ function decrypt(mode, cipherText, key) {
 	});
 	return bytes.toString(CryptoJS.enc.Utf8);
 }
+
+function removeInput() {
+	var textEdit = document.querySelector('input#password');
+	if (textEdit != null) {
+		textEdit.parentElement.removeChild(textEdit);
+	}
+}
