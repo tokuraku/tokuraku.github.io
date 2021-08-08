@@ -1,5 +1,18 @@
 window.onload = function(){
-	if (location.hash == '#weather') {
+	var textEdit = document.querySelector('input#password');
+	textEdit.onkeypress = function(e) {
+		if (e.keyCode == 13) {
+			getContent(e.target.value);
+		}
+	}
+	
+	var params = new URLSearchParams(location.search);
+	var pass = params.get('pass');
+	if (pass != null) {
+		getContent(pass)
+	}
+	
+	/*if (location.hash == '#weather') {
 		var url = '/weather'
 		var xhr = new XMLHttpRequest();
 		xhr.open('GET', url, true);
@@ -15,7 +28,25 @@ window.onload = function(){
 			}
 		}
 		xhr.send();
+	}*/
+}
+
+function getContent(key) {
+	removeInput();
+	var url = '/weather'
+	var xhr = new XMLHttpRequest();
+	xhr.open('GET', url, true);
+	xhr.onreadystatechange = function () {
+		if (xhr.readyState === 4 && xhr.status === 200) {
+			var decrypted = decrypt(CryptoJS.mode.CBC, xhr.responseText, key);
+			var resHTML = document.createElement('div');
+			resHTML.innerHTML = decrypted;
+			document.querySelector('div#weather').appendChild(resHTML);
+			//document.querySelector('div#weather').innerHTML = decrypted;
+			rader();
+		}
 	}
+	xhr.send();
 }
 
 function rader() {
@@ -37,3 +68,5 @@ function rader() {
 		}
 	},false);
 }
+
+
