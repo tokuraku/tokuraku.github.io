@@ -7,7 +7,7 @@ window.onload = function(){
 	}
 	
 	var params = new URLSearchParams(location.search);
-	var pass = params.get('pass');
+	var pass = params.get('key');
 	if (pass != null) {
 		getContent(pass)
 	}
