@@ -21,3 +21,13 @@ function removeInput() {
 		textEdit.parentElement.removeChild(textEdit);
 	}
 }
+
+function showSecret() {
+	var secret = document.querySelector('div#secret').innerHTML;
+	var key = document.querySelector('input#password');
+	if (key != null) {
+		var dec = decrypt(CryptoJS.mode.CBC, secret, key.value);
+		secret.style.display = 'initial';
+		secret.innerHTML = dec;
+	}
+}
