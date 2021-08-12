@@ -20,7 +20,7 @@ window.onload = function(){
 }
 
 function getContent(key) {
-	removeInput();
+	//removeInput();
 	var url = '/weather'
 	var xhr = new XMLHttpRequest();
 	xhr.open('GET', url, true);
