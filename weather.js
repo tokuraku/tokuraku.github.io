@@ -1,8 +1,14 @@
 window.onload = function(){
 	var textEdit = document.querySelector('input#password');
 	textEdit.onkeypress = function(e) {
+		var target = e.target;
 		if (e.keyCode == 13) {
-			getContent(e.target.value);
+			if (target.className == 'enter') {
+				getContent(target.value);
+				target.className = 'secret';
+			} else if (target.className == 'secret') {
+				showSecret();
+			}
 		}
 	}
 	
