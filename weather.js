@@ -8,6 +8,7 @@ window.onload = function(){
 				textEdit.className = 'secret';
 			} else if (target.className == 'secret') {
 				showSecret();
+				textEdit.className = 'none';
 			}
 		}
 	}
