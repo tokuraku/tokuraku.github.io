@@ -24,11 +24,11 @@ function removeInput() {
 
 function showSecret() {
 	var keyInput = document.querySelector('input#password');
-	var secret = document.querySelector('div#secret').innerHTML;
+	var secret = document.querySelector('div#secret');
 	console.log(secret)
 	if (keyInput != null) {
-		var dec = decrypt(CryptoJS.mode.CBC, secret, keyInput.value);
-		keyInput.style.display = 'initial';
-		keyInput.innerHTML = dec;
+		var dec = decrypt(CryptoJS.mode.CBC, secret.innerHTML, keyInput.value);
+		secret.style.display = 'initial';
+		secret.innerHTML = dec;
 	}
 }
