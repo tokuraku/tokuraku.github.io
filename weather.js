@@ -7,7 +7,7 @@ window.onload = function(){
 				getContent(target.value);
 				target.className = 'secret';
 			} else if (target.className == 'secret') {
-				showSecret();
+				showSecret(target.value);
 			}
 		}
 	}
