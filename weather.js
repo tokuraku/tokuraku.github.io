@@ -5,9 +5,9 @@ window.onload = function(){
 		if (e.keyCode == 13) {
 			if (target.className == 'enter') {
 				getContent(target.value);
-				target.className = 'secret';
+				textEdit.className = 'secret';
 			} else if (target.className == 'secret') {
-				showSecret(target.value);
+				showSecret();
 			}
 		}
 	}
@@ -16,6 +16,7 @@ window.onload = function(){
 	var pass = params.get('key');
 	if (pass != null) {
 		getContent(pass)
+		textEdit.className = 'secret';
 	}
 }
 
