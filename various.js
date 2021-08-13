@@ -28,7 +28,7 @@ function showSecret() {
 	console.log(secret)
 	if (keyInput != null) {
 		var dec = decrypt(CryptoJS.mode.CBC, secret.innerHTML, keyInput.value);
-		secret.style.display = 'initial';
+		secret.style.display = 'block';
 		secret.innerHTML = dec;
 	}
 }
