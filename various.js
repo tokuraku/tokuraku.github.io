@@ -22,12 +22,13 @@ function removeInput() {
 	}
 }
 
-function showSecret(key) {
+function showSecret() {
+	var keyInput = document.querySelector('input#password');
 	var secret = document.querySelector('div#secret').innerHTML;
 	console.log(secret)
-	if (key != null) {
+	if (keyInput != null) {
 		var dec = decrypt(CryptoJS.mode.CBC, secret, key);
-		secret.style.display = 'initial';
-		secret.innerHTML = dec;
+		keyInput.style.display = 'initial';
+		keyInput.innerHTML = dec;
 	}
 }
