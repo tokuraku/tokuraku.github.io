@@ -9,6 +9,7 @@ window.onload = function(){
 			} else if (target.className == 'secret') {
 				showSecret();
 				textEdit.className = 'none';
+				removeInput();
 			}
 		}
 	}
