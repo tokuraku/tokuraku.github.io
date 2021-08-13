@@ -24,6 +24,7 @@ function removeInput() {
 
 function showSecret(key) {
 	var secret = document.querySelector('div#secret').innerHTML;
+	console.log(secret)
 	if (key != null) {
 		var dec = decrypt(CryptoJS.mode.CBC, secret, key);
 		secret.style.display = 'initial';
