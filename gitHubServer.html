@@ -27,8 +27,8 @@
         var d1 = new Date();
         var d2 = new Date();
         d2.setDate(d2.getDate()-18);
-        var text = `本日${d1.getMonth()+1}/${d1.getDate()}の18日前は${d2.getMonth()+1}/${d2.getDate()}です`
-        document.querySelector('div#static').appendChild()
+        var text = `本日${d1.getMonth()+1}/${d1.getDate()}の18日前は${d2.getMonth()+1}/${d2.getDate()}です`;
+        document.querySelector('div#static').appendChild(document.createTextNode(text));
       </script>
     </div>
     <input id="password" type="text" placeholder="Password" class="enter">
