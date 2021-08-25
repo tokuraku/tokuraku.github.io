@@ -27,9 +27,18 @@
       <script>
         var d1 = new Date();
         var d2 = new Date();
+        var d2 = new Date();
         d2.setDate(d2.getDate()-19);
-        var text = `本日${d1.getMonth()+1}/${d1.getDate()}の19日前は${d2.getMonth()+1}/${d2.getDate()}です`;
-        document.querySelector('div#static').appendChild(document.createTextNode(text));
+        d3.setDate(d3.getDate()-21);
+        var text1 = `本日${d1.getMonth()+1}/${d1.getDate()}`;
+        var text2 = `19日前は${d2.getMonth()+1}/${d2.getDate()}です`;
+        var text3 = `3週間(21日)後は${d3.getMonth()+1}/${d3.getDate()}です`;
+        var par = document.querySelector('div#static');
+        //par.appendChild(document.createTextNode(text1));
+        //par.appendChild(document.create)
+        //par.appendChild(document.createTextNode(text2));
+        //par.appendChild(document.createTextNode(text3));
+        par.innerHTML = text1 + '<br>' + text2 + '<br>' + text3; 
       </script>
     </div>
     <input id="password" type="text" placeholder="Password" class="enter">
