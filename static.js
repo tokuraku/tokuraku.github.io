@@ -13,8 +13,10 @@ d4.setFullYear(d4.getFullYear()-16);
 d4.setDate(d4.getDate()+1);
 d5.setFullYear(d5.getFullYear()-12);
 var l = [d4.getFullYear(),d4.getMonth()+1,d4.getDate(),d5.getFullYear(),d5.getMonth()+1,d5.getDate()];
-var textC1 = `12歳から15歳の範囲は対象者の生年月日が`;
-var textC2 = `${l[0]}/${l[1]}/${l[2]} から ${l[3]}/${l[4]}/${l[5]} です`;
+//var textC1 = `12歳から15歳の範囲は対象者の生年月日が`;
+//var textC2 = `${l[0]}/${l[1]}/${l[2]} から ${l[3]}/${l[4]}/${l[5]} です`;
+var textC1 = `保護者の同伴が必要な15歳までの範囲は対象者の生年月日が`;
+var textC2 = `${l[0]}/${l[1]}/${l[2]} 以前です`;
 
 var par = document.querySelector('div#static');
 par.innerHTML = text1 + '<br>' + text2 + '<br>' + text3 + '<br><br>' + textC1 + '<br>' + textC2; 
